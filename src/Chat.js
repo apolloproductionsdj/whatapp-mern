@@ -5,7 +5,7 @@ import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined } from "@material-
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from '@material-ui/icons/Mic';
 
-function Chat() {
+function Chat({ messages }) {
   return (
     <div className="chat">
       <div className="chat__header">
@@ -28,47 +28,20 @@ function Chat() {
       </div>
 
       <div className="chat__body">
-        <p className="chat__message">
-          <span className="chat__name">Sonny</span>
+        {messages.map((message) => (
+          <p className={`chat__message ${message.received && "chat__receiver"}`}>
+            <span className="chat__name">{message.name}</span>
 
-          This is a message
+            {message.message}
 
-          <span className="chat__timestamp">
-            {new Date().toUTCString()}
-          </span>
+            <span className="chat__timestamp">
+              {message.timestamp}
+            </span>
 
-        </p>
+          </p>
+        ))}
 
-        <p className="chat__receiver chat__message">
-          <span className="chat__name">Sonny</span>
 
-          This is a message
-
-          <span className="chat__timestamp">
-            {new Date().toUTCString()}
-          </span>
-
-        </p>
-        <p className="chat__message">
-          <span className="chat__name">Sonny</span>
-
-          This is a message
-
-          <span className="chat__timestamp">
-            {new Date().toUTCString()}
-          </span>
-
-        </p>
-        <p className="chat__message chat__receiver">
-          <span className="chat__name">Sonny</span>
-
-          This is a message
-
-          <span className="chat__timestamp">
-            {new Date().toUTCString()}
-          </span>
-
-        </p>
 
       </div>
 

@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 import Pusher from 'pusher-js';
 import axios from './axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from './Login';
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -37,8 +38,7 @@ function App() {
   return (
     <div className="app">
       {!user ? (
-
-        <h1>Login</h1>
+        <Login />
       ) : (
           <div className="app_body">
             <Router>

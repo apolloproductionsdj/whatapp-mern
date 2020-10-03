@@ -52,7 +52,7 @@ function Chat({ messages }) {
       </div>
 
       <div className="chat__body">
-        {messages.map((message) => (
+        {message.map((message) => (
           <p className={`chat__message ${message.received && "chat__receiver"}`}>
             <span className="chat__name">{message.name}</span>
 
